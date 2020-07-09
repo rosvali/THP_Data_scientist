@@ -8,16 +8,13 @@ module Crypto
 	CRY = [BLOCK, PRICE].transpose.to_h
 
 	def self.big_value
-		# tab = CRY.each_value do |key, value|
-		# {
-		# 	puts "#{tab.sort {|a, b| a.size <=> b.size}}"
-		# }
-		CRY.each_value.with_index do |v, i| 
-		{
-			puts "value: #{v} | index: #{i}"
-		}
-		#CRY.each_pair.with_index { |p, i| puts "k: #{p} | i: #{i}" }\
+		puts "La devise qui à la plus grande valeur est #{CRY.sort_by { |k, v| v.to_f }.last[0]}"
+	end
+
+	def self.small_value
+		puts "La devise qui à la plus petite valeur est #{CRY.sort_by { |k, v| v.to_f }.first[0]}"
 	end
 end
 
 Crypto.big_value
+Crypto.small_value
