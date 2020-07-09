@@ -62,11 +62,11 @@ module Journalist
 	end
 end
 
-# Journalist.length
-# Journalist.min
-# Journalist.five_size
-# Journalist.capitalize
-# Journalist.sort
-# Journalist.sizesort
-# Journalist.repartition
-# Journalist.epenser
+Journalist.length
+Journalist.min
+Journalist.five_size
+Journalist.capitalize
+Journalist.sort
+Journalist.sizesort
+Journalist.repartition
+Journalist.epenser
