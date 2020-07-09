@@ -15,7 +15,7 @@ module Journalist
 
 	end
 
-    def self.five_size
+	def self.five_size
 		puts "Combien y-a-t'il de handle contenant 5 caractères ?"
 		puts "> Il y a #{TAB.count {|x| x.size == 6}} handles contenant 5 caractères"
 		puts "----------"
@@ -32,18 +32,41 @@ module Journalist
 		new_tab = TAB.sort
 		pp new_tab
 		puts "----------"
-    end
-    
-    def self.epenser
-    	puts "Quelle est la position dans l'array de la personne @epenser ?"
-        puts "> @epenser est à la position #{TAB.index("@epenser")}"
+	end
+
+	def self.sizesort
+		puts "Handle trié par taille :"
+		puts "#{TAB.sort {|a, b| a.size <=> b.size}}"
 		puts "----------"
-    end
+	end
+
+	def self.epenser
+		puts "Quelle est la position dans l'array de la personne @epenser ?"
+		puts "> @epenser est à la position #{TAB.index("@epenser")}"
+		puts "----------"
+	end
+
+	def self.repartition
+		count = 0
+		value_max = 1
+		h = {}
+		TAB.each do |nom|
+			count = nom.size
+			if h[count].nil?
+				h[count] = 1
+			else
+				h[count] += 1
+			end
+		end
+		h.each {|key, value| puts "Il y a #{value} handles qui ont #{key} caractères" }
+	end
 end
 
-Journalist.length
-Journalist.min
-Journalist.five_size
-Journalist.capitalize
-Journalist.sort
-Journalist.epenser
+# Journalist.length
+# Journalist.min
+# Journalist.five_size
+# Journalist.capitalize
+# Journalist.sort
+# Journalist.sizesort
+# Journalist.repartition
+# Journalist.epenser
