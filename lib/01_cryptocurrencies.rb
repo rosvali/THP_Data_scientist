@@ -12,9 +12,24 @@ module Crypto
 	end
 
 	def self.small_value
-		puts "La devise qui à la plus petite valeur est #{CRY.sort_by { |k, v| v.to_f }.first[0]}"
+		puts "La devise qui à la plus petite valeur est #{CRY.sort_by { |k, v| v.to_f }.first(2)}"
+	end
+
+	def self.low
+		tab = CRY.map { |name, price| [name] if price.to_f < 6000 }.compact
+		puts "Les devises qui sont inférieur à 6000 sont #{tab}"
+	end
+
+	def self.expensive
+		tab = CRY.map { |name, price| [name, price] if price.to_f < 6000 }.compact
+		puts "La devise la plus grande inférieur à 6000 est #{tab.sort_by { |k, v| v.to_f}.last[0]}"
 	end
 end
 
 Crypto.big_value
+puts "=========="
 Crypto.small_value
+puts "=========="
+Crypto.low
+puts "=========="
+Crypto.expensive

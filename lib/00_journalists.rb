@@ -28,9 +28,8 @@ module Journalist
 	end
 
 	def self.sort
-		puts "Handle trié par ordre alphabétique :"
 		new_tab = TAB.sort
-		pp new_tab
+		puts "Handle trié par ordre alphabétique #{new_tab}"
 		puts "----------"
 	end
 
@@ -43,7 +42,6 @@ module Journalist
 	def self.epenser
 		puts "Quelle est la position dans l'array de la personne @epenser ?"
 		puts "> @epenser est à la position #{TAB.index("@epenser")}"
-		puts "----------"
 	end
 
 	def self.repartition
